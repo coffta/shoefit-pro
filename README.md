@@ -12,7 +12,6 @@
 
 ### Association
 - has_many :customers
-- has_many :records
 
 ## customersテーブル
 | Column | Type | Option |
@@ -30,71 +29,55 @@
 
 ### Association
 - belongs_to :user
-- has_many :record
-
-## recordsテーブル
-| Column | Type | Option |
-|-|-|-|
-| id(PK) | integer | null: false |
-| user（FK) | references | null: false, foreign_key: true |
-| customer（FK) | references | null: false, foreign_key: true |
-
-### Association
-- belongs_to :user
-- belongs_to :customer
-- has_many :paper_records
-- has_many :foot_images
-- has_many :walking_movies
 - has_many :shoe_sizes
-
 
 ## paper_recordsテーブル
 | Column | Type | Option |
 |-|-|-|
 | id(PK) | integer | null: false |
-| record(FK) | references | null: false , foreign_key: true|
+| customer(FK) | references | null: false , foreign_key: true|
 | paper_records_date | string ||
 
 ### Association
-- belongs_to :record
+- belongs_to :customers
 
 ## foot_imagesテーブル
 | Column | Type | Option |
 |-|-|-|
 | id(PK) | integer | null: false |
-| record(FK) | references | null: false , foreign_key: true|
+| customer(FK) | references | null: false , foreign_key: true|
 | foot_image_date | string ||
 
 ### Association
-- belongs_to :record
+- belongs_to :customers
 
 ## walking_moviesテーブル
 | Column | Type | Option |
 |-|-|-|
 | id(PK) | integer | null: false |
-| record(FK) | references | null: false , foreign_key: true|
+| customer(FK) | references | null: false , foreign_key: true|
 | walking_movie_date | string ||
 
 ### Association
-- belongs_to :record
+- belongs_to :customers
 
 ## shoe_sizesテーブル
 | Column | Type | Option |
 |-|-|-|
 | id(PK) | integer | null: false |
-| record(FK) | references | null: false , foreign_key: true|
+| customer(FK) | references | null: false , foreign_key: true|
+| measured_value(FK) | references | null: false , foreign_key: true|
 | foot_length | integer ||
 | foot_width | string ||
 
 ### Association
-- belongs_to :record
-- has_one :measured_values
+- belongs_to :customers
+- belongs_to :measured_values
 
 ## measured_valuesテーブル
 | Column | Type | Option |
 |-|-|-|
 | id(PK) | integer | null: false |
-| shoe_size(FK) | references | null: false , foreign_key: true|
 | sexorchild | string | null: false |
 | foot_shape | string | null: false |
 | foot_length_left | integer | null: false |
@@ -109,6 +92,6 @@
 | foot_width_nonload_right | integer | null: false |
 
 ### Association
-- belongs_to :shoe_size
+- has_one :shoe_size
 
 end
