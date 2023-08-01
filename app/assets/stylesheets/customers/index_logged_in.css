@@ -38,37 +38,19 @@ a {
 
 /* //画面上部の「プロのための足計測アプリ」帯部分 */
 
-/* SHOEFIT-PROの使い方部分 */
-.select-howtouse-contents {
+/* 理想の靴サイズを計測しよう部分 */
+.measuredsize-contents {
   padding: 5vh 15vw;
-}
-
-.select-howtouse-contents>.title {
   text-align: center;
-  font-size: 3.5vh;
-  font-weight: bold;
-  margin-bottom: 5vh;
-  position: relative;
 }
 
-.select-howtouse-contents>.title::after {
-  content: '';
-  width: 70px;
-  height: 4px;
-  background-color: #9c8678;
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.howtouse-lists {
+.measuredsize {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.howtouse-lists>.list {
+.measuredsize-lists>.list {
   width: 33vh;
   display: flex;
   flex-direction: column;
@@ -76,55 +58,18 @@ a {
   position: relative;
 }
 
-.list-pict {
+.measuredsize-sample-pict {
   margin-bottom: 20px;
   width: 100%;
 }
 
-.howtouse-list-number {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 60px;
-  height: 60px;
-  font-size: 30px;
-  text-align: center;
-  line-height: 60px;
-  background-color: #9c8678;
-  color: #fff;
-}
-
-.howtouse-list-text {
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 50px;
-}
-
-.howtouse-list-description {
-  font-size: 18px;
-  margin-top: 20px;
-}
-
-/* //SHOEFIT-PROの使い方部分 */
-
-.resister-btn {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: inline-block;
-  text-align: center;
-}
-
-.resister-red-btn {
-  width: 30%;
+.measuredsize-red-btn {
+  width: 50%;
   background: #ea352d;
   border: 1px solid #ea352d;
   color: #fff;
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
-  margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 30px;
 }
+
