@@ -1,0 +1,64 @@
+<%= render "shared/header" %>
+<div class='main'>
+
+  <%# 画面上部の「プロのための足計測アプリ」帯部分 %>
+  <div class='title-contents'>
+    <h2 class='service-title'>
+      For the professional shoe fitting...
+    </h2>
+    <p class='service-explain'>
+      SHOEFIT-PROは計測結果を瞬時に計算できる
+    </p>
+    <p class='service-explain'>
+      足計測アプリです
+    </p>
+  </div>
+  <%# //画面上部の「プロのための足計測アプリ」帯部分  %>
+
+  <%# SHOEFIT-PROの使い方部分 %>
+  <div class='select-howtouse-contents'>
+    <h2 class='title'>
+      SHOEFIT-PROの使い方
+    </h2>
+    <ul class='howtouse-lists'>
+      <li class='list'>
+        <%= image_tag "howtouse1.png", class:"list-pict" %>
+        <span class='howtouse-list-number'>1</span>
+        <h3 class='howtouse-list-text'>
+          足サイズを計測する
+        </h3>
+        <p class='howtouse-list-description'>
+          体重をかけた時とかけていない時のサイズを計測
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "howtouse2.png", class:"list-pict" %>
+        <span class='howtouse-list-number'>2</span>
+        <h3 class='howtouse-list-text'>
+          計測値を表に入力
+        </h3>
+        <p class='howtouse-list-description'>
+          ワイズ表を見なくても表に記入するだけ
+        </p>
+      </li>
+      <li class='list'>
+        <%= image_tag "howtouse3.png", class:"list-pict" %>
+        <span class='howtouse-list-number'>3</span>
+        <h3 class='howtouse-list-text'>
+          ボタンをクリック
+        </h3>
+        <p class='howtouse-list-description'>
+          瞬時に理想の靴サイズの目安がわかります
+        </p>
+      </li>
+    </ul>
+  </div>
+  <%# //SHOEFIT-PROの使い方部分 %>
+
+<div class='resister-btn'>
+  <%= link_to new_user_registration_path do %>
+    <button class="resister-red-btn">新規登録して計測する</button>
+  <% end %>
+</div>
+
+<%= render "shared/footer" %>
