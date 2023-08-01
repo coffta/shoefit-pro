@@ -1,0 +1,32 @@
+<%= render "shared/header" %>
+<div class='main'>
+
+  <%# 画面上部の「プロのための足計測アプリ」帯部分 %>
+  <div class='title-contents'>
+    <h2 class='service-title'>
+      For the professional shoe fitting...
+    </h2>
+    <p class='service-explain'>
+      SHOEFIT-PROは計測結果を瞬時に計算できる
+    </p>
+    <p class='service-explain'>
+      足計測アプリです
+    </p>
+  </div>
+  <%# //画面上部の「プロのための足計測アプリ」帯部分  %>
+
+  <%# 理想の靴サイズを計測しよう部分 %>
+  <div class='measuredsize-contents'>
+    <h2 class='title'>
+      理想の靴サイズを計測しよう
+    </h2>
+    <ul class='measuredsize'>
+      <%= image_tag "measuredsize-sample.png", class:"measuredsize-sample-pict" %>
+    </ul>
+    <div class='measuredsize-btn'>
+      <button class="measuredsize-red-btn">理想靴サイズの目安を出す</button>
+    </div>
+  </div>
+  <%# //理想の靴サイズを計測しよう部分 %>
+
+<%= render "shared/footer" %>
