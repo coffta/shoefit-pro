@@ -1,10 +1,11 @@
 <%= render "shared/second-header"%>
 <div class='edit-main'>
-  <%= form_with model: @user, url: user_path(@user), method: :patch, data: { turbo: false } do |form| %> 
+  <%= form_with model: @user, url: user_path(@user), data: { turbo: false } do |form| %> 
+   <%= form.hidden_field :_method, value: :patch %>
     <div class='edit-form-wrap'>
      <div class='edit-form-header'>
       <h1 class='edit-form-header-text'>
-          会員情報管理
+          ユーザー情報管理
       </h1>
      </div>
       <%= render 'shared/error_messages', model: @user %>
@@ -55,12 +56,12 @@
       </div>
       <div class="edit-form-group">
         <div class='edit-btn'>
-          <%= form.submit "会員情報を更新" ,class:"editupdate-red-btn" %>
+          <%= button_to "ユーザー情報を更新", user_path(@user), method: :patch, class: "editupdate-red-btn" %>
         </div>
       </div>
       <div class="edit-form-group">
         <div class='edit-btn'>
-         <%= form.submit "会員情報を削除" ,class:"editdelete-red-btn" %>
+         <%= button_to "ユーザー情報を削除", user_path(@user), method: :delete, data: { confirm: "本当に削除しますか？"}, class: "editdelete-red-btn" %>
         </div> 
       </div> 
     </div>
