@@ -92,6 +92,10 @@ a {
   line-height: 60px;
   background-color: #9c8678;
   color: #fff;
+  border-radius: 50%; 
+  border: 1px dashed #fff;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 8px #9c8678;
 }
 
 .howtouse-list-text {
