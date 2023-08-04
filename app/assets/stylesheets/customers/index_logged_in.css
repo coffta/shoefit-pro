@@ -6,7 +6,7 @@ a {
   background: #f8f8f8;
 }
 
-/* 画面上部の「プロのための足計測アプリ」帯部分 */
+/* 画面上部の「理想の靴サイズを計算しよう」帯部分 */
 .title-contents {
   width: 100vw;
   background-image: url('shoefit-pro-header.png');
@@ -15,52 +15,51 @@ a {
   background-position: top center;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding: 5vh 15vw;
+  padding: 3vh 15vw;
   color: #fff;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
-.service-title {
-  font-size: 6vh;
+.calculate-shoesize-title {
+  font-size: 4vh;
 }
 
-.service-explain {
-  font-size: 2vh;
-  line-height: 40px;
-}
-
-.store-btn {
-  display: flex;
-  margin-top: 24px;
-}
-
-/* //画面上部の「プロのための足計測アプリ」帯部分 */
+/* //画面上部の「理想の靴サイズを計算しよう」帯部分 */
 
 /* 理想の靴サイズを計測しよう部分 */
 .measuredsize-contents {
-  padding: 5vh 15vw;
+  padding: 5vh 10vw;
   text-align: center;
+}
+
+.explain-title {
+  font-size: 2vh;
 }
 
 .measuredsize {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
-.measuredsize-lists>.list {
-  width: 33vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+.measuredsize th,
+.measuredsize td {
+  padding: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
 }
 
-.measuredsize-sample-pict {
-  margin-bottom: 20px;
-  width: 100%;
+/* 1行目の背景色を指定 */
+.measuredsize tr:first-child th {
+  background-color: #9C8678;
+  color: #fff;
+}
+
+/* 2行目以降の背景色を指定 */
+.measuredsize tr:not(:first-child) {
+  background-color: #F6F3EC;
 }
 
 .measuredsize-red-btn {
