@@ -24,35 +24,35 @@
           </tr>
           <tr>
             <th>足長[mm]</th>
-            <td colspan="2"><input type="number" name="foot_length_right" placeholder="235"></td>
-            <td colspan="2"><input type="number" name="foot_length_left" placeholder="235"></td>
+            <td colspan="2"><input type="number" name="foot_length_right" placeholder="235" ></td>
+            <td colspan="2"><input type="number" name="foot_length_left" placeholder="235" ></td>
           </tr>
           <tr>
             <th>足幅（荷重位）[mm]</th>
-            <td><input type="number" name="foot_width_load_right" placeholder="235"></td>
+            <td><input type="number" name="foot_width_load_right" placeholder="235" ></td>
             <td></td>
-            <td><input type="number" name="foot_width_load_left" placeholder="235"></td>
+            <td><input type="number" name="foot_width_load_left" placeholder="235" ></td>
             <td></td>
           </tr>
           <tr>
             <th>足囲（荷重位）[mm]</th>
-            <td><input type="number" name="foot_girth_load_right" placeholder="235"></td>
+            <td><input type="number" name="foot_girth_load_right" placeholder="235" ></td>
             <td></td>
-            <td><input type="number" name="foot_girth_load_left" placeholder="235"></td>
+            <td><input type="number" name="foot_girth_load_left" placeholder="235" ></td>
             <td></td>
           </tr>
           <tr>
             <th>足幅（非荷重位）[mm]</th>
-            <td><input type="number" name="foot_width_nonload_right" placeholder="235"></td>
+            <td><input type="number" name="foot_width_nonload_right" placeholder="235" ></td>
             <td></td>
-            <td><input type="number" name="foot_width_nonload_left" placeholder="235"></td>
+            <td><input type="number" name="foot_width_nonload_left" placeholder="235" ></td>
             <td></td>
           </tr>
           <tr>
             <th>足囲（非荷重位）[mm]</th>
-            <td><input type="number" name="foot_girth_nonload_right" placeholder="235"></td>
+            <td><input type="number" name="foot_girth_nonload_right" placeholder="235" ></td>
             <td></td>
-            <td><input type="number" name="foot_girth_nonload_left" placeholder="235"></td>
+            <td><input type="number" name="foot_girth_nonload_left" placeholder="235" ></td>
            <td></td>
           </tr>
           <tr>
@@ -101,7 +101,7 @@
       </div>
       <!-- 目安の靴サイズを表示する領域 -->
       <h1>計算結果</h1>
-      <p>あなたの足長は '<%= @calculated_length %>' です。</p>
+      <p>あなたの足長は <%= @calculated_length %> です。</p>
     </div>
   <% end %>
   <%# //理想の靴サイズを計測しよう部分 %>
