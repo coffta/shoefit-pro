@@ -78,7 +78,7 @@
 | Column | Type | Option |
 |-|-|-|
 | id(PK) | integer | null: false |
-| sexorchild | string | null: false |
+| gender | string | null: false |
 | foot_shape | string | null: false |
 | foot_length_left | integer | null: false |
 | foot_length_right | integer | null: false |

@@ -1,2 +1,0 @@
-class FootSizeController < ApplicationController
-end

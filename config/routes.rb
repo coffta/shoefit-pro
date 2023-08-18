@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :customers, only: :index
   resources :users, only: [:index, :edit, :update, :destroy]
 
-  # 足長計算のルーティング
-  post '/calculate_foot_length', to: 'foot_length#calculate', as: :calculate_foot_length
+  post '/calculate_shoe_size', to: 'shoe_size#calculate', as: :calculate_shoe_size
+
+  # ログイン後のトップページを設定
+  get 'index_logged_in', to: 'customers#index_logged_in', as: 'index_logged_in'
 end

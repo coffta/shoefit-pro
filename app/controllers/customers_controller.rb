@@ -5,6 +5,11 @@ class CustomersController < ApplicationController
     # ログインしている場合の処理はビューに委ねるため、ここでは何もしない
   end
 
+  def index_logged_in
+    # ログイン後のトップページのコードを追加
+    render 'index_logged_in'
+  end
+
   private
 
   def check_user_signed_in
