@@ -27,5 +27,8 @@ module ShoefitPro
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.action_controller.default_protect_from_forgery = true
+    config.autoload_paths += %W(#{config.root}/lib)
+    # For auto-loading classes from the 'lib' folder
+    config.autoload_paths << "#{Rails.root}/lib"
   end
 end

@@ -7,7 +7,7 @@ a {
 }
 
 /* 画面上部の「理想の靴サイズを計算しよう」帯部分 */
-.title-contents {
+.result-title-contents {
   width: 100vw;
   background-image: url('shoefit-pro-header.png');
   background-size: cover;
@@ -22,47 +22,47 @@ a {
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
-.calculate-shoesize-title {
+.shoesize-result-title {
   font-size: 4vh;
 }
 
 /* //画面上部の「理想の靴サイズを計算しよう」帯部分 */
 
-/* 理想の靴サイズを計測しよう部分 */
-.measuredsize-contents {
+/* 計算結果の表部分 */
+.shoesize-result-contents {
   padding: 5vh 10vw;
   text-align: center;
 }
 
-.explain-title {
+.explain-shoesize-result-title {
   font-size: 2vh;
 }
 
-.measuredsize {
+.shoesize-result {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.measuredsize th,
-.measuredsize td {
+.shoesize-result th,
+.shoesize-result td {
   padding: 8px;
   border: 1px solid #ccc;
   text-align: center;
 }
 
 /* 1行目の背景色を指定 */
-.measuredsize tr:first-child th {
+.shoesize-result tr:first-child th {
   background-color: #9C8678;
   color: #fff;
 }
 
 /* 2行目以降の背景色を指定 */
-.measuredsize tr:not(:first-child) {
+.shoesize-result tr:not(:first-child) {
   background-color: #F6F3EC;
 }
 
-.measuredsize-red-btn {
+.save-shoesize-red-btn {
   width: 50%;
   background: #ea352d;
   border: 1px solid #ea352d;
