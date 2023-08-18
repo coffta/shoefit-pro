@@ -5,7 +5,7 @@ Shoefit-Pro
 計測結果を表に入れるだけで瞬時に計算できる、プロのための足計測アプリケーション。
 
 # URL
-http//#####
+https://shoefit-pro.onrender.com/
 
 # 利用方法
 ## 新規登録・ログイン
@@ -37,9 +37,11 @@ https://docs.google.com/spreadsheets/d/1g6c91cKC-yuT3T08tLyVx_Nz26vc20vSolj9wyK9
 [![Image from Gyazo](https://i.gyazo.com/62955e5e0b6f8d897ec331445670fc74.gif)](https://gyazo.com/62955e5e0b6f8d897ec331445670fc74)
 ログアウトボタンをクリックするとログアウトしトップページに遷移します。
 [![Image from Gyazo](https://i.gyazo.com/614be9df9de948043f53bdf8037ed85f.gif)](https://gyazo.com/614be9df9de948043f53bdf8037ed85f)
+計測結果を表に記載しボタンを押すと、理想の足サイズの計算結果が表示されます。
+[![Image from Gyazo](https://i.gyazo.com/82a2a234add65dffb2e521c0fe1d83f8.gif)](https://gyazo.com/82a2a234add65dffb2e521c0fe1d83f8)
 
 # 実装予定の機能
-現在、理想の靴サイズの目安の計算機能を実装中。
+現在、理想の靴サイズの目安の計算機能の詳細を実装中。
 今後は計算結果をお客様毎に保存する機能を実装予定。
 
 # データベース設計
