@@ -11,8 +11,8 @@
   <div class='nav'>
     <ul class='lists'>
       <% if user_signed_in? %>
-      <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
-      <li><%= link_to '顧客リスト', "#", class: "customers-list" %></li>
+      <li><%= link_to current_user.nickname, edit_user_path(current_user), class: "user-nickname" %></li>
+      <%#<li><%= link_to '顧客リスト', "#", class: "customers-list" %></li>
       <li><%= link_to 'ユーザー管理', edit_user_path(current_user), class: "user-information" %></li>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: {turbo_method: :delete}, class: "logout" %></li>
       <% else %>
