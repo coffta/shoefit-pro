@@ -8,8 +8,18 @@ RSpec.describe User, type: :model do
   describe 'ユーザー新規登録' do
     context '内容に問題ない場合' do
       it '全て正常' do
-        expect(@user).to be_valid
-      end
+        user = User.new(
+          nickname: "test",
+          email: "test@test.com",
+          password: "password123",
+          password_confirmation: "password123",
+          password_confirmation: "password123",
+          name: "John Doe",
+          address: "123 Main St",
+          phone_number: "12345678909"
+          )
+        expect(user).to be_valid
+        end
     end
 
     context '内容に問題がある場合' do
