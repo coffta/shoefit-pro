@@ -1,4 +1,6 @@
 class ShoeSizeController < ApplicationController
+skip_before_action :verify_authenticity_token
+
   def calculate
 
     # 入力値をセッションに保存
