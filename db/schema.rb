@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_29_070029) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_06_025936) do
   create_table "customers", charset: "utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "customer_name", null: false
@@ -30,7 +30,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_070029) do
     t.bigint "customer_id", null: false
     t.integer "calculated_length", null: false
     t.string "gender", null: false
-    t.string "toe_shape", null: false
     t.integer "foot_length_left", null: false
     t.integer "foot_length_right", null: false
     t.integer "foot_girth_load_left", null: false
@@ -52,6 +51,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_29_070029) do
     t.date "foot_measured_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "toe_shape_right"
+    t.string "toe_shape_left"
     t.index ["customer_id"], name: "index_shoe_sizes_on_customer_id"
   end
 

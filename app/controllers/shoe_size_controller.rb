@@ -15,7 +15,8 @@ skip_before_action :verify_authenticity_token
       foot_width_nonload_left: params[:foot_width_nonload_left],
       foot_girth_nonload_right: params[:foot_girth_nonload_right],
       foot_girth_nonload_left: params[:foot_girth_nonload_left],
-      toe_shape: params[:toe_shape],
+      toe_shape_right: params[:toe_shape_right],
+      toe_shape_left: params[:toe_shape_left],
       gender: params[:gender]
     }
 

@@ -4,7 +4,7 @@ class CreateShoeSizes < ActiveRecord::Migration[7.0]
       t.references :customer, null: false , foreign_key: true
       t.integer    :calculated_length, null: false
       t.string     :gender  , null: false      
-      t.string     :toe_shape  , null: false    
+      t.string     :toe_shape  , null: false  
       t.integer    :foot_length_left     , null: false   
       t.integer    :foot_length_right , null: false      
       t.integer    :foot_girth_load_left , null: false  

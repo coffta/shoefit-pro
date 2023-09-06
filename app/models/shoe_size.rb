@@ -5,7 +5,8 @@ class ShoeSize < ApplicationRecord
   with_options presence: true do
     validates :calculated_length ,presence: true
     validates :gender ,presence: true
-    validates :toe_shape ,presence: true
+    validates :toe_shape_right ,presence: true
+    validates :toe_shape_left ,presence: true
     validates :foot_length_left ,presence: true
     validates :foot_length_right ,presence: true
     validates :foot_girth_load_left ,presence: true

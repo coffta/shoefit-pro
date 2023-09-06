@@ -8,4 +8,9 @@ Rails.application.routes.draw do
 
   # ログイン後のトップページを設定
   get 'index_logged_in', to: 'customers#index_logged_in', as: 'index_logged_in'
+
+  # 計算結果保存用のルート設定
+  post '/save_calculated_result', to: 'shoe_size#save_calculated_result', as: :save_calculated_result
+
+
 end
