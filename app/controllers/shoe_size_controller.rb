@@ -137,9 +137,9 @@ skip_before_action :verify_authenticity_token
     foot_measured_date: saved_date 
    )
 
-   # リダイレクトやメッセージの表示など、適切なレスポンスを返す
-  end
+   redirect_to action: 'save_calculated_result'
 
+  end
 
   private
 
