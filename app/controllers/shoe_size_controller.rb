@@ -108,7 +108,7 @@ skip_before_action :verify_authenticity_token
    @calculated_girth_nonload_left = calculate_foot_girth(gender, foot_length_left, foot_girth_nonload_left) 
 
    # 日付を取得（今日の日付を使用）
-   saved_date = Date.today
+   @foot_measured_date = Date.today
 
    # モデルを使用してデータベースに保存
    ShoeSize.create(
@@ -137,7 +137,7 @@ skip_before_action :verify_authenticity_token
     foot_measured_date: saved_date 
    )
 
-   redirect_to action: 'save_calculated_result'
+   render 'result/save_calculated_result'
 
   end
 
