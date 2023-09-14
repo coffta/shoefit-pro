@@ -20,16 +20,47 @@
 | user（FK) | references | null: false, foreign_key: true |
 | customer_name | string | null: false |
 | customer_address | string ||
-| date_of_birth | string ||
+| date_of_birth | date ||
 | customer_phone_number | string ||
 | customer_email |  ||
 | occupation | string ||
-| sex | string ||
+| customer_gender | string ||
 | memo | text ||
 
 ### Association
 - belongs_to :user
 - has_many :shoe_sizes
+
+## shoe_sizesテーブル
+| Column | Type | Option |
+|-|-|-|
+| id(PK) | integer | null: false |
+| customer(FK) | references | null: false , foreign_key: true|
+| foot_measured_date | date ||
+| calculated_length | integer ||
+| gender | string | null: false |
+| toe_shape | string | null: false |
+| foot_length_left | integer | null: false |
+| foot_length_right | integer | null: false |
+| foot_girth_load_left | integer | null: false |
+| foot_girth_load_right | integer | null: false |
+| foot_girth_nonload_left | integer | null: false |
+| foot_girth_nonload_right | integer | null: false |
+| foot_width_load_left | integer | null: false |
+| foot_width_load_right | integer | null: false |
+| foot_width_nonload_left | integer | null: false |
+| foot_width_nonload_right | integer | null: false |
+| calculated_width_load_right | string | null: false |
+| calculated_width_load_left | string | null: false |
+| calculated_girth_load_right | string | null: false |
+| calculated_girth_load_left | string | null: false |
+| calculated_width_nonload_right | string | null: false |
+| calculated_width_nonload_left | string | null: false |
+| calculated_girth_nonload_right | string | null: false |
+| calculated_girth_nonload_right | string | null: false |
+
+### Association
+- belongs_to :customer
 
 ## paper_recordsテーブル
 | Column | Type | Option |
@@ -60,38 +91,5 @@
 
 ### Association
 - belongs_to :customers
-
-## shoe_sizesテーブル
-| Column | Type | Option |
-|-|-|-|
-| id(PK) | integer | null: false |
-| customer(FK) | references | null: false , foreign_key: true|
-| measured_value(FK) | references | null: false , foreign_key: true|
-| foot_length | integer ||
-| foot_size | string ||
-
-### Association
-- belongs_to :customers
-- belongs_to :measured_values
-
-## measured_valuesテーブル
-| Column | Type | Option |
-|-|-|-|
-| id(PK) | integer | null: false |
-| gender | string | null: false |
-| foot_shape | string | null: false |
-| foot_length_left | integer | null: false |
-| foot_length_right | integer | null: false |
-| foot_girth_load_left | integer | null: false |
-| foot_girth_load_right | integer | null: false |
-| foot_girth_nonload_left | integer | null: false |
-| foot_girth_nonload_right | integer | null: false |
-| foot_width_load_left | integer | null: false |
-| foot_width_load_right | integer | null: false |
-| foot_width_nonload_left | integer | null: false |
-| foot_width_nonload_right | integer | null: false |
-
-### Association
-- has_one :shoe_size
 
 end
