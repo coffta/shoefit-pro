@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'index_logged_in', to: 'customers#index_logged_in', as: 'index_logged_in'
 
   # 計算結果保存用のルート設定
-  post '/save_calculated_result', to: 'shoe_size#save_calculated_result', as: :save_calculated_result
-  get '/save_calculated_result', to: 'shoe_size#save_calculated_result', as: :show_calculated_result
-
+  post '/save_result', to: 'customers#save_result', as: :save_result
+  get '/save_result', to: 'customers#save_result', as: :show_result
+  
 end

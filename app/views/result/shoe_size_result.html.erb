@@ -4,13 +4,13 @@
   <%# 画面上部の「計算結果」帯部分 %>
   <div class='result-title-contents'>
     <h2 class='shoesize-result-title'>
-      計算結果
+      <%= l @foot_measured_date, format: :long %> 足サイズ計算結果
     </h2>
   </div>
   <%# //画面上部の「計算結果」帯部分  %>
 
   <%# 計算結果の表部分 %>
-  <%= form_tag 'save_calculated_result', method: :post,local: true, data: { turbo: false } do %>
+  <%= form_tag 'save_result', method: :post,local: true, data: { turbo: false } do %>
     <div class='shoesize-result-contents'>
       <h2 class='explain-shoesize-result-title'>
       </h2>
@@ -99,7 +99,7 @@
       <h1>計算結果</h1>
       <p>理想的な足長の目安は <%= @calculated_length %> です。</p>
       <div class='save-shoesize-btn'>
-        <%= submit_tag "保存する", class: "save-shoesize-red-btn" %>
+        <%= submit_tag "カルテを作って保存する", class: "save-shoesize-red-btn" %>
       </div>   
     </div>
   <% end %>

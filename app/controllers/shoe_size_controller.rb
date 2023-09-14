@@ -29,8 +29,10 @@ skip_before_action :verify_authenticity_token
     # FootLengthCalculatorクラスのcalculateメソッドを呼び出し、計算結果を取得
     @calculated_length = calculate_foot_length(foot_length_right, foot_length_left)
    
-    # 入力された性別、足幅を取得
+    # 入力された性別、足幅,爪先形状を取得
     gender = params[:gender].to_s
+    toe_shape_right = params[:toe_shape_right].to_s
+    toe_shape_left = params[:toe_shape_left].to_s
     foot_width_load_right = params[:foot_width_load_right].to_i
     foot_width_load_left = params[:foot_width_load_left].to_i
     foot_width_nonload_right = params[:foot_width_nonload_right].to_i
@@ -47,6 +49,9 @@ skip_before_action :verify_authenticity_token
     foot_girth_load_left = params[:foot_girth_load_left].to_i
     foot_girth_nonload_right = params[:foot_girth_nonload_right].to_i
     foot_girth_nonload_left = params[:foot_girth_nonload_left].to_i
+
+    # 日付を取得（今日の日付を使用）
+    @foot_measured_date = Date.today
 
     # 足囲の計算結果を取得
     @calculated_girth_load_right = calculate_foot_girth(gender, foot_length_right, foot_girth_load_right)
@@ -68,47 +73,6 @@ skip_before_action :verify_authenticity_token
     }
 
     @calculated_values = session[:calculated_values]
-
-    render "result/shoe_size_result"
-  end
-
-  def save_calculated_result
-   # 入力された足の長さを取得
-   foot_length_right = params[:foot_length_right].to_i
-   foot_length_left = params[:foot_length_left].to_i
-
-   # FootLengthCalculatorクラスのcalculateメソッドを呼び出し、計算結果を取得
-   @calculated_length = calculate_foot_length(foot_length_right, foot_length_left)
-   
-   # 入力された性別、足幅、爪先形状を取得
-   gender = params[:gender].to_s
-   toe_shape_right = params[:toe_shape_right].to_s
-   toe_shape_left = params[:toe_shape_left].to_s
-   foot_width_load_right = params[:foot_width_load_right].to_i
-   foot_width_load_left = params[:foot_width_load_left].to_i
-   foot_width_nonload_right = params[:foot_width_nonload_right].to_i
-   foot_width_nonload_left = params[:foot_width_nonload_left].to_i    
-
-   # 足幅の計算結果を取得
-   @calculated_width_load_right = calculate_foot_width(gender, foot_length_right, foot_width_load_right)
-   @calculated_width_load_left = calculate_foot_width(gender, foot_length_left, foot_width_load_left)
-   @calculated_width_nonload_right = calculate_foot_width(gender, foot_length_right, foot_width_nonload_right)
-   @calculated_width_nonload_left = calculate_foot_width(gender, foot_length_left, foot_width_nonload_left)
-
-   # 入力された足囲を取得
-   foot_girth_load_right = params[:foot_girth_load_right].to_i
-   foot_girth_load_left = params[:foot_girth_load_left].to_i
-   foot_girth_nonload_right = params[:foot_girth_nonload_right].to_i
-   foot_girth_nonload_left = params[:foot_girth_nonload_left].to_i
-
-   # 足囲の計算結果を取得
-   @calculated_girth_load_right = calculate_foot_girth(gender, foot_length_right, foot_girth_load_right)
-   @calculated_girth_load_left = calculate_foot_girth(gender, foot_length_left, foot_girth_load_left)
-   @calculated_girth_nonload_right = calculate_foot_girth(gender, foot_length_right, foot_girth_nonload_right)
-   @calculated_girth_nonload_left = calculate_foot_girth(gender, foot_length_left, foot_girth_nonload_left) 
-
-   # 日付を取得（今日の日付を使用）
-   @foot_measured_date = Date.today
 
    # モデルを使用してデータベースに保存
    ShoeSize.create(
@@ -134,11 +98,9 @@ skip_before_action :verify_authenticity_token
     calculated_width_nonload_left: @calculated_width_nonload_left,
     calculated_girth_nonload_right: @calculated_girth_nonload_right,
     calculated_girth_nonload_left: @calculated_girth_nonload_left,
-    foot_measured_date: saved_date 
+    foot_measured_date: @foot_measured_date
    )
-
-   render 'result/save_calculated_result'
-
+    render "result/shoe_size_result"
   end
 
   private

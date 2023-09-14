@@ -3,28 +3,28 @@ class ShoeSize < ApplicationRecord
   belongs_to :customer
 
   with_options presence: true do
-    validates :calculated_length ,presence: true
-    validates :gender ,presence: true
-    validates :toe_shape_right ,presence: true
-    validates :toe_shape_left ,presence: true
-    validates :foot_length_left ,presence: true
-    validates :foot_length_right ,presence: true
-    validates :foot_girth_load_left ,presence: true
-    validates :foot_girth_load_right ,presence: true
-    validates :foot_girth_nonload_left ,presence: true
-    validates :foot_girth_nonload_right ,presence: true
-    validates :foot_width_load_left ,presence: true
-    validates :foot_width_load_right ,presence: true
-    validates :foot_width_nonload_left ,presence: true
-    validates :foot_width_nonload_right ,presence: true
-    validates :calculated_width_load_right ,presence: true
-    validates :calculated_width_load_left ,presence: true
-    validates :calculated_girth_load_right ,presence: true
-    validates :calculated_girth_load_left ,presence: true
-    validates :calculated_width_nonload_right ,presence: true
-    validates :calculated_width_nonload_left ,presence: true
-    validates :calculated_girth_nonload_right ,presence: true
-    validates :calculated_girth_nonload_left ,presence: true
-    validates :foot_measured_date ,presence: true
+    validates :calculated_length,
+              :gender,
+              :toe_shape_right,
+              :toe_shape_left,
+              :foot_length_left,
+              :foot_length_right,
+              :foot_girth_load_left,
+              :foot_girth_load_right,
+              :foot_girth_nonload_left,
+              :foot_girth_nonload_right,
+              :foot_width_load_left,
+              :foot_width_load_right,
+              :foot_width_nonload_left,
+              :foot_width_nonload_right,
+              :calculated_width_load_right,
+              :calculated_width_load_left,
+              :calculated_girth_load_right,
+              :calculated_girth_load_left,
+              :calculated_width_nonload_right,
+              :calculated_width_nonload_left,
+              :calculated_girth_nonload_right,
+              :calculated_girth_nonload_left,
+              :foot_measured_date
   end
 end
