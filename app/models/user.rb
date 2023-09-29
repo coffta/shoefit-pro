@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
-    validates :name
+    validates :name, presence: true, format: { with: /\A[^\x01-\x7E]+\z/, message: 'is invalid. Input full-width characters' }
     validates :address
     validates :phone_number, format: {with: /\A[0-9]{11}\z/, message: "is invalid. "}
   end
