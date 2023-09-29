@@ -10,6 +10,10 @@ class CustomersController < ApplicationController
     render 'index_logged_in'
   end
 
+  def save_result
+    render 'customers_info'
+  end
+
   private
 
   def check_user_signed_in
