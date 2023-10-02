@@ -10,16 +10,16 @@ RSpec.describe User, type: :model do
       it '全て正常' do
         user = User.new(
           nickname: "test",
-          email: "test@test.com",
+          email: "test@example.com",
           password: "password123",
           password_confirmation: "password123",
           password_confirmation: "password123",
           name: "John Doe",
           address: "123 Main St",
-          phone_number: "12345678909"
+          phone_number: "12345678901"
           )
-        expect(user).to be_valid
-        end
+        expect(@user).to be_valid
+      end
     end
 
     context '内容に問題がある場合' do
@@ -79,11 +79,11 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include('Phone number is invalid. ')
       end
       it '電話番号が12桁以上あると保存できないこと' do
-        @user.phone_number = '12345678910123111'
+        @user.phone_number = '123456789101'
         @user.valid?
         expect(@user.errors.full_messages).to include('Phone number is invalid. ')
       end
-      it '電話番号が9桁以下であると保存できないこと' do
+      it '電話番号が10桁以下であると保存できないこと' do
         @user.phone_number = '12345'
         @user.valid?
         expect(@user.errors.full_messages).to include('Phone number is invalid. ')
@@ -97,6 +97,21 @@ RSpec.describe User, type: :model do
         @user.name = ''
         @user.valid?
         expect(@user.errors.full_messages).to include("Name can't be blank")
+      end
+      it 'emailアドレスが重複している場合は、保存できない' do
+        # ユーザー1を作成
+        user1 = FactoryBot.create(:user, email: 'test@test.com')
+        
+        # ユーザー2を作成（同じemailアドレスを指定）
+        @user.email = 'test@test.com'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Email has already been taken')
+      end
+
+      it 'nameに半角文字が入力された場合は、保存できない' do
+        @user.name = 'John Doe' 
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Name should be entered in full-width characters.')
       end
     end
   end
