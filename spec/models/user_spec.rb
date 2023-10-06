@@ -111,7 +111,7 @@ RSpec.describe User, type: :model do
       it 'nameに半角文字が入力された場合は、保存できない' do
         @user.name = 'John Doe' 
         @user.valid?
-        expect(@user.errors.full_messages).to include('Name should be entered in full-width characters.')
+        expect(@user.errors.full_messages).to include('Name is invalid. Input full-width characters')
       end
     end
   end
